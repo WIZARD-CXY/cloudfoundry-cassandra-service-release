@@ -1,0 +1,18 @@
+---
+supported_versions: ['1.0']
+default_version: '1.0'
+capacity: <%= 200 %>
+plan: free
+local_db: sqlite3:/var/vcap/store/cassandra_node.db
+mbus: nats://<%= properties.nats.user %>:<%= properties.nats.password %>@<%= properties.nats.address %>:<%= properties.nats.port %>
+index: <%= spec.index %>
+base_dir: /var/vcap/store/cassandra/
+logging:
+  file: /var/vcap/sys/log/cassandra_node/cassandra_node.log
+  level: debug
+  <% if properties.syslog_aggregator %>
+  syslog: vcap.cassandra_node
+  <% end %>
+pid: /var/vcap/sys/run/cassandra_node/cassandra_node.pid
+node_id: <%= "cassandra_cassandra_#{spec.index.to_i + 1}" %>
+port: <%= properties.cassandra && properties.cassandra.port || 9160 %>

@@ -1,0 +1,6 @@
+--- 
+name: cassandra
+dependencies:
+- dea_jvm7
+files: 
+- cassandra/apache-cassandra-1.1.6-bin.tar.gz
