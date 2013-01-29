@@ -28,7 +28,7 @@ case $1 in
     mkdir -p $RUN_DIR
     mkdir -p $LOG_DIR
 
-    /var/vcap/packages/cassandra/bin/cassandra -p $PIDFILE -Dcassandra.port=<%=properties.cassandra.port%> \
+    /var/vcap/packages/cassandra/bin/cassandra -p $PIDFILE -Dcassandra.rpc_port=<%=properties.cassandra.port%> \
          >>$LOG_DIR/cassandra.stdout.log \
          2>>$LOG_DIR/cassandra.stderr.log
 
