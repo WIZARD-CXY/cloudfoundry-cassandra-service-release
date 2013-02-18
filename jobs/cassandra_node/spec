@@ -14,3 +14,6 @@ templates:
   cassandra_node_ctl: bin/cassandra_node_ctl
   cassandra_node.yml.erb: config/cassandra_node.yml
   syslog_forwarder.conf.erb: config/syslog_forwarder.conf
+  cassandra.yaml.erb: conf/cassandra.yaml
+  log4j-server.properties.erb: conf/log4j-server.properties
+  cassandra-env.sh.erb: conf/cassandra-env.sh
